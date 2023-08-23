@@ -1,8 +1,11 @@
 package quiz;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 /*
 
@@ -58,30 +61,25 @@ INSERT INTO answers (question_id, answer_text) VALUES (1, 'd) None of the mentio
 
 public class Database {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/JavaQuizMQA";
-    private static final String USER = "root";
-    private static final String PASS = "Nikola07";
 
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(DB_URL, USER, PASS);
+    private static final String USER = System.getenv("DB_USER");
+    private static final String PASS = System.getenv("DB_PASS");
+
+    private static final Properties props = new Properties();
+
+    static {
+        try (InputStream inputStream = Database.class.getResourceAsStream("/config.properties")) {
+            props.load(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-//    public static List<Theme> getAllThemes() {
-//        List<Theme> themes = new ArrayList<>();
-//        try (Connection conn = getConnection();
-//             Statement stmt = conn.createStatement();
-//             ResultSet resultSet = stmt.executeQuery("SELECT id, theme_name FROM themes")) {
-//
-//            while (resultSet.next()) {
-//                int id = resultSet.getInt("id");
-//                String themeName = resultSet.getString("theme_name");
-//                Theme theme = new Theme(id, themeName);
-//                themes.add(theme);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return themes;
-//    }
+    public static Connection getConnection() throws SQLException {
+        String user = props.getProperty("db.user");
+        String pass = props.getProperty("db.pass");
+        return DriverManager.getConnection(DB_URL, user, pass);
+    }
 
     public static List<Theme> getAllThemes() {
         List<Theme> themes = new ArrayList<>();
@@ -162,74 +160,6 @@ public class Database {
         }
         return answersList.toArray(new String[0]);
     }
-
-//    public static Question getQuestion(int themeId, int subThemeId, int questionNumber) {
-//        try (Connection conn = getConnection();
-//             PreparedStatement stmt = conn.prepareStatement(
-//                     "SELECT id, question_text, correct_answer, explanation " +
-//                             "FROM questions WHERE theme_id = ? AND subtheme_id = ? AND question_number = ?")) {
-//            stmt.setInt(1, themeId);
-//            stmt.setInt(2, subThemeId);
-//            stmt.setInt(3, questionNumber);
-//            ResultSet resultSet = stmt.executeQuery();
-//            if (resultSet.next()) {
-//                int id = resultSet.getInt("id");
-//                String questionText = resultSet.getString("question_text");
-//                String correctAnswer = resultSet.getString("correct_answer");
-//                String explanation = resultSet.getString("explanation");
-//
-//                String[] answers = getAnswersForQuestion(id);
-//
-//                return new Question(id, themeId, subThemeId, questionNumber, questionText, answers, correctAnswer, explanation);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
-
-//    public static Theme getThemeById(int themeId) {
-//        try (Connection conn = getConnection();
-//             PreparedStatement stmt = conn.prepareStatement("SELECT theme_name FROM themes WHERE id = ?")) {
-//            stmt.setInt(1, themeId);
-//            ResultSet resultSet = stmt.executeQuery();
-//            if (resultSet.next()) {
-//                String themeName = resultSet.getString("theme_name");
-//                String explanation = getThemeExplanation(themeId);
-//                return new Theme(themeId, themeName, explanation);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
-
-//    public static SubTheme getSubThemeById(int subThemeId) {
-//        try (Connection conn = getConnection();
-//             PreparedStatement stmt = conn.prepareStatement("SELECT theme_id, subtheme_name FROM subthemes WHERE id = ?")) {
-//            stmt.setInt(1, subThemeId);
-//            ResultSet resultSet = stmt.executeQuery();
-//            if (resultSet.next()) {
-//                int themeId = resultSet.getInt("theme_id");
-//                String subThemeName = resultSet.getString("subtheme_name");
-//                return new SubTheme(subThemeId, themeId, subThemeName);
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
-
-//    public static void insertAnswer(int questionId, String answerText) {
-//        try (Connection conn = getConnection();
-//             PreparedStatement stmt = conn.prepareStatement("INSERT INTO answers (question_id, answer_text) VALUES (?, ?)")) {
-//            stmt.setInt(1, questionId);
-//            stmt.setString(2, answerText);
-//            stmt.executeUpdate();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public static String getThemeExplanation(int themeId) {
         String explanation = "";
