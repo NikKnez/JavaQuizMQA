@@ -54,6 +54,7 @@ This project uses the following dependencies:
 
 - JavaFX: The JavaFX library is used for creating the graphical user interface.
 - MySQL Connector: The MySQL Connector is used for connecting to the MySQL database. Import the database schema using `db_schema.sql` in /lib folder.
+- Database: Create config.properties file inside resource folder that contains users data(db.user=your_root and db.pass=your_pass).
 - CSS Styles: The application's UI is styled using CSS. The styles can be found in the `styles.css` file.
 
 ## Screenshots
