@@ -3,9 +3,11 @@ package quiz;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -33,7 +35,11 @@ public class JavaQuizFX extends Application {
 
         initMainLayout();
 
-        Scene scene = new Scene(mainLayout, 1024, 760);
+        // Get the user's screen dimensions
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+        // Set the scene size based on the screen dimensions
+        Scene scene = new Scene(mainLayout, screenBounds.getWidth(), screenBounds.getHeight());
 
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm());
 
