@@ -7,58 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-/*
-
-USE JavaQuizMQA;
-
-CREATE TABLE themes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    theme_name VARCHAR(255) NOT NULL
-    theme_explanations VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE subthemes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    theme_id INT,
-    subtheme_name VARCHAR(255) NOT NULL,
-    FOREIGN KEY (theme_id) REFERENCES themes (id)
-);
-
-CREATE TABLE questions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    theme_id INT,
-    subtheme_id INT,
-    question_number INT,
-    question_text TEXT NOT NULL,
-    correct_answer CHAR(1) NOT NULL,
-    explanation TEXT NOT NULL,
-    FOREIGN KEY (theme_id) REFERENCES themes (id),
-    FOREIGN KEY (subtheme_id) REFERENCES subthemes (id)
-);
-
-CREATE TABLE answers (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    question_id INT,
-    answer_text VARCHAR(255) NOT NULL,
-    FOREIGN KEY (question_id) REFERENCES questions (id)
-);
- */
-
-/*
-INSERT INTO themes (theme_name, theme_explanations) VALUES ('Java Data Types, Variables, and Arrays',
-'The section contains Java multiple choice questions and answers on integer, character, floating and boolean data types,
-variables, type casting and conversions and properties of arrays.');
-INSERT INTO subthemes (theme_id, subtheme_name) VALUES (1, 'Java Integer and Floating Data Types');
-INSERT INTO questions (theme_id, subtheme_id, question_number, question_text, correct_answer, explanation)
-VALUES (1, 1, 1, 'What is the range of short data type in Java?', 'b', 'Short occupies 16 bits in memory. Its range is from -32768 to 32767.');
-
-INSERT INTO answers (question_id, answer_text) VALUES (1, 'a) -128 to 127');
-INSERT INTO answers (question_id, answer_text) VALUES (1, 'b) -32768 to 32767');
-INSERT INTO answers (question_id, answer_text) VALUES (1, 'c) -2147483648 to 2147483647');
-INSERT INTO answers (question_id, answer_text) VALUES (1, 'd) None of the mentioned');
-
- */
-
 public class Database {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/JavaQuizMQA";
     private static final String USER = System.getenv("DB_USER");
