@@ -1,0 +1,169 @@
+/* styles.css */
+
+.root {
+     -fx-background-image: url("/background.jpg");
+}
+
+/* Styles for theme selection */
+.vbox-theme-selection {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+.label-welcome {
+    -fx-font-size: 32px;
+       -fx-font-family: "Arial Black";
+       -fx-fill: #818181;
+       -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+
+.label-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.button-start-quiz {
+    -fx-background-color:
+        #ecebe9,
+        rgba(0,0,0,0.05),
+        linear-gradient(#dcca8a, #c7a740),
+        linear-gradient(#f9f2d6 0%, #f4e5bc 20%, #e6c75d 80%, #e2c045 100%),
+        linear-gradient(#f6ebbe, #e6c34d);
+    -fx-background-insets: 0,9 9 8 9,9,10,11;
+    -fx-background-radius: 50;
+    -fx-padding: 15 30 15 30;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-text-fill: #311c09;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.1) , 2, 0.0 , 0 , 1);
+}
+.button-start-quiz Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(255,255,255,0.5) , 0, 0.0 , 0 , 1);
+}
+
+/* Styles for sub-theme selection */
+.vbox-sub-theme-selection {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+/* Styles for quiz */
+.vbox-quiz {
+    -fx-alignment: top-center;
+    -fx-spacing: 20;
+    -fx-padding: 15;
+}
+
+.scroll-pane-quiz {
+    -fx-fit-to-width: true;
+}
+
+.vbox-question {
+    -fx-alignment: top-left;
+    -fx-spacing: 5;
+}
+
+.label-question {
+    -fx-font-weight: bold;
+}
+
+.radio-button-answer {
+    -fx-padding: 5;
+}
+
+.button-submit {
+    -fx-background-color:
+        #3c7fb1,
+        linear-gradient(#fafdfe, #e8f5fc),
+        linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+}
+/*
+.button-finish {
+    -fx-background-color: #36A9AE;
+    -fx-text-fill: red;
+}*/
+
+.button-finish {
+    -fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color:
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+}
+.button-finish:hover {
+    -fx-background-color:
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #ea7f4b, #c54e2c);
+}
+.button-finish:pressed {
+    -fx-padding: 10 15 13 15;
+    -fx-background-insets: 2 0 0 0,2 0 3 0, 2 0 4 0, 2 0 5 0;
+}
+.button-finish Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0,0,0,2 );
+}
+
+/* Styles for quiz result */
+.vbox-result {
+    -fx-alignment: center;
+    -fx-spacing: 10;
+}
+
+.label-result-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.label-correct {
+    -fx-text-fill: green;
+    -fx-font-weight: bold;
+}
+
+.label-wrong {
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+.label-explanation {
+    -fx-text-fill: blue;
+    -fx-font-weight: bold;
+}
+
+.button-action {
+    -fx-background-color: green;
+    -fx-padding: 5 10;
+}
+
+.button-start-new-quiz {
+    -fx-background-color: linear-gradient(#f0ff35, #a9ff00),
+                          radial-gradient(center 50% -40%, radius 200%, #b8ee36 45%, #80c800 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+.button-exit {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+}
+
+.button-box {
+    -fx-padding: 20;
+}
