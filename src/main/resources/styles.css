@@ -6,20 +6,20 @@
 
 /* Styles for theme selection */
 .vbox-theme-selection {
-    -fx-alignment: center;
+    -fx-alignment: top-center;
     -fx-spacing: 20;
 }
 
 .label-welcome {
     -fx-font-size: 32px;
-       -fx-font-family: "Arial Black";
-       -fx-fill: #818181;
-       -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
 }
 
-
 .label-title {
-    -fx-font-size: 18px;
+    -fx-font-size: 20px;
+    -fx-font-family: "Georgia";
     -fx-font-weight: bold;
 }
 
@@ -83,11 +83,6 @@
     -fx-text-fill: black;
     -fx-font-size: 14px;
 }
-/*
-.button-finish {
-    -fx-background-color: #36A9AE;
-    -fx-text-fill: red;
-}*/
 
 .button-finish {
     -fx-padding: 8 15 15 15;
