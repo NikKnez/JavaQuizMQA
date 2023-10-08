@@ -61,7 +61,7 @@ This project uses the following dependencies:
 
 Insert screenshots of the application's UI in action here.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are warmly welcomed! If you find issues or want to add new features, feel free to open an issue or submit a pull request.
 
