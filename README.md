@@ -59,7 +59,14 @@ This project uses the following dependencies:
 
 ## Screenshots
 
-Insert screenshots of the application's UI in action here.
+![Theme Selection](https://github.com/NikKnez/JavaQuizMQA/blob/b2436b85ca211a0409c41c091f284533b0c13eed/src/main/screenshots/Theme%20selection.png)
+
+![Sub Theme Selection](https://github.com/NikKnez/JavaQuizMQA/blob/b2436b85ca211a0409c41c091f284533b0c13eed/src/main/screenshots/Sub%20theme%20selection.png)
+
+![Quiz](https://github.com/NikKnez/JavaQuizMQA/blob/b2436b85ca211a0409c41c091f284533b0c13eed/src/main/screenshots/Quiz.png)
+
+![Final Score](https://github.com/NikKnez/JavaQuizMQA/blob/b2436b85ca211a0409c41c091f284533b0c13eed/src/main/screenshots/Final%20score.png)
+
 
 ## Contributing
 
