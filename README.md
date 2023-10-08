@@ -12,8 +12,8 @@
     <a href="#features">Features</a> •
     <a href="#getting-started">Getting Started</a> •
     <a href="#usage">Usage</a> •
-    <a href="#dependicies">Dependicies</a> •
-    <a href="#screenshot">Screenshot</a> •
+    <a href="#dependencies">Dependencies</a> •
+    <a href="#screenshots">Screenshots</a> •
     <a href="#contributing">Contributing</a> •
 </p>
 
