@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class Database {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/JavaQuizMQA";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/javaquiz";
     private static final String USER = System.getenv("DB_USER");
     private static final String PASS = System.getenv("DB_PASS");
 
